@@ -19,8 +19,8 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install soul-cli
-        run: npm install -g soul-cli
+      - name: Install soul-md-cli
+        run: npm install -g soul-md-cli
 
       - name: Validate changed soul files
         run: |
@@ -28,7 +28,7 @@ jobs:
           while IFS= read -r file; do
             if [ -n "$file" ] && [ -f "$file" ]; then
               echo "Validating: $file"
-              if ! soul-cli validate "$file"; then
+              if ! soul-md-cli validate "$file"; then
                 FAILED=1
               fi
             fi
@@ -37,7 +37,7 @@ jobs:
           if [ $FAILED -ne 0 ]; then
             echo ""
             echo "One or more soul files failed validation."
-            echo "Run 'npx soul-cli validate <file>' locally to see details."
+            echo "Run 'npx soul-md-cli validate <file>' locally to see details."
             exit 1
           fi
 
