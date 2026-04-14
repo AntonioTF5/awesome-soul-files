@@ -1,4 +1,4 @@
-# Awesome Soul Files [![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![Validate](https://img.shields.io/badge/validated-soul--cli-blue)](https://www.npmjs.com/package/soul-cli) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
+# Awesome Soul Files [![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![Validate](https://img.shields.io/badge/validated-soul--cli-blue)](https://www.npmjs.com/package/soul-md-cli) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
 
 > A curated list of SOUL.md files for AI agents, personas, and characters.
 
@@ -82,7 +82,7 @@ Agents trained on specific industries, markets, or professional contexts.
 1. Fork this repository
 2. Add your soul file somewhere publicly accessible (GitHub Gist, your own repo, etc.)
 3. Add an entry to the appropriate section in this README: `[Agent name](link) — one-line description`
-4. Validate your soul file: `npx soul-cli validate your-file.soul.md`
+4. Validate your soul file: `npx soul-md-cli validate your-file.soul.md`
 5. Open a pull request
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md) for the quality bar.

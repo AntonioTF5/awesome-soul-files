@@ -4,7 +4,7 @@
 
 1. **Fork** this repository
 2. **Add your soul file** somewhere publicly accessible — your own GitHub repo, a Gist, or inline in a PR
-3. **Validate it**: `npx soul-cli validate your-file.soul.md` — must pass
+3. **Validate it**: `npx soul-md-cli validate your-file.soul.md` — must pass
 4. **Add one line** to the appropriate section in README.md: `[Agent name](link) — one-line description`
 5. **Open a pull request**
 
@@ -12,7 +12,7 @@
 
 An entry is accepted if the soul file:
 
-- Validates against the SOUL.md schema (run `npx soul-cli validate`)
+- Validates against the SOUL.md schema (run `npx soul-md-cli validate`)
 - Has a `personality` field that is specific to this agent — not "a helpful assistant"
 - Has at least `tone`, `values`, and `knowledge_domains` filled in
 - Would be genuinely useful to deploy, not a demonstration of the format

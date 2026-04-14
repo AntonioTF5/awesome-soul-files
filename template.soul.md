@@ -1,7 +1,7 @@
 <!--
 Template: minimal valid SOUL.md file with comments on every field.
 Copy this, fill in the fields, remove the comments, and validate with:
-  npx soul-cli validate your-agent.soul.md
+  npx soul-md-cli validate your-agent.soul.md
 
 Deploy as a live agent at agenturo.app.
 -->

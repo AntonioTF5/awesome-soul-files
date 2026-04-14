@@ -1,0 +1,44 @@
+name: Validate Soul Files
+
+on:
+  pull_request:
+    paths:
+      - '**/*.soul.md'
+
+jobs:
+  validate:
+    name: Validate .soul.md files in PR
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install soul-cli
+        run: npm install -g soul-cli
+
+      - name: Validate changed soul files
+        run: |
+          FAILED=0
+          while IFS= read -r file; do
+            if [ -n "$file" ] && [ -f "$file" ]; then
+              echo "Validating: $file"
+              if ! soul-cli validate "$file"; then
+                FAILED=1
+              fi
+            fi
+          done <<< "$(find . -name '*.soul.md' -not -path './.git/*' | sort)"
+
+          if [ $FAILED -ne 0 ]; then
+            echo ""
+            echo "One or more soul files failed validation."
+            echo "Run 'npx soul-cli validate <file>' locally to see details."
+            exit 1
+          fi
+
+          echo "All soul files passed validation."
